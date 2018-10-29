@@ -1,0 +1,27 @@
+@model GameViewModel
+
+@{
+    ViewBag.Title = "Jeu";
+    Layout = "_Layout";
+}
+
+<h2>Jeu</h2>
+
+<form method="post" asp-area="" asp-controller="Xmass" asp-action="game">
+    <p>Est-ce que</p>
+    <select asp-for="Person" asp-items="@Model.Names" class="form-control"></select>
+    <p>a pigé</p>
+    <select asp-for="Pick" asp-items="@Model.Names" class="form-control"></select>
+    <button type="submit" class="btn btn-primary">Essayer</button>
+</form>
+@if (Model.Answer.HasValue)
+{
+    if (Model.Answer.Value)
+    {
+        <p class="true">VRAI</p>
+    }
+    else
+    {
+        <p class="false">FAUX</p>
+    }
+}

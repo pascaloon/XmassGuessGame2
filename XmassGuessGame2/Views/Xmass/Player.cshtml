@@ -1,0 +1,16 @@
+@model Player
+
+@{
+    ViewBag.Title = "Player";
+    Layout = "_Layout";
+}
+
+<h2>Pige</h2>
+
+<p>Bonjour @Model.Name, </p>
+<p>Appuyez sur le bouton pour afficher votre pige:</p>
+<div class="pickwrapper">
+    <p id="personPick"><b>@Model.Pick</b></p>
+    <button id="showHideButton" class="btn btn-primary">Afficher</button>
+</div>
+

@@ -1,0 +1,18 @@
+@model List<Player>
+
+@{
+    ViewBag.Title = "Game Configuration";
+    Layout = "_Layout";
+}
+
+<h2>Game Configuration</h2>
+<form method="POST">
+    <button asp-area="" asp-controller="Xmass" asp-action="regeneratepicks" class="btn btn-primary">Regenerate picks configuration</button>
+</form>
+<p>People in the group:</p>
+<ul>
+    @foreach (Player player in Model)
+    {
+        <li><a asp-area="" asp-controller="Xmass" asp-action="Player" asp-route-id="@player.HashedName">@player.Name</a></li>
+    }
+</ul>
